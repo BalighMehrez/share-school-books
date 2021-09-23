@@ -32,5 +32,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           s3_bucket_name: elasticbeanstalk-us-east-2-692130670639
           s3_file_path: share-school-books
+          ebs_version_label: share-school-books-v1
           ebs_wait_for_env_to_be_green: true
           use_same_version: true
