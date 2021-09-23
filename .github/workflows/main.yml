@@ -22,16 +22,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2        
-      - name: Deploy to AWS Elastic Beanstalk
-        uses: Amraneze/aws-beanstalk-deploy@master
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v18
         with:
-          region: us-east-2
-          environment_name: Shareschoolbooks-env
-          application_name: share-school-books
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          s3_bucket_name: elasticbeanstalk-us-east-2-692130670639
-          s3_file_path: .elasticbeanstalk
-          ebs_version_label: share-school-books-v1
-          ebs_wait_for_env_to_be_green: true
-          use_same_version: true
+          application_name: share-school-books
+          environment_name: Shareschoolbooks-env
+          version_label: v1
+          region: us-east-2
+          deployment_package: deploy.zip
