@@ -31,4 +31,3 @@ jobs:
           environment_name: Shareschoolbooks-env
           version_label: v1
           region: us-east-2
-          deployment_package: deploy.zip
