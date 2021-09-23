@@ -21,7 +21,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2        
+      - uses: actions/checkout@v2  
+
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'  
+        
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
         with:
@@ -31,3 +35,4 @@ jobs:
           environment_name: Shareschoolbooks-env
           version_label: v1
           region: us-east-2
+          deployment_package: deploy.zip
