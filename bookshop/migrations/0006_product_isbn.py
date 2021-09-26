@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='isbn',
-            field=models.CharField(db_index=True, default='01234567891234', max_length=13),
+            field=models.CharField(db_index=True, default='0123456789123', max_length=13),
             preserve_default=False,
         ),
     ]
