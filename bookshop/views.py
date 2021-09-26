@@ -63,15 +63,16 @@ def search_Result(request):
 
 #review 
 def Comment_Review(request,product_id):
+    product = get_object_or_404(Product,id=product_id)
     if request.method == 'POST':
         name = request.POST['name']
         email = request.POST['email']
         rating = request.POST['rating']
-        review_comment = request.POST['review']
-        product = get_object_or_404(Product,id=product_id)
+        review_comment = request.POST['review']        
+        cart_product_form = CartAddProductForm()
         comment_review = Review.objects.create(product=product,name=name,email=email,rating=rating,review_comment=review_comment)
         message = messages.success(request,"Your reviews is submitted")
         
-        return render(request,'bookshop/product_detail.html')
+        return product_detail(request,product.slug)
     
-    return render(request,'bookshop/product_detail.html')
+    return product_detail(request,product.slug)

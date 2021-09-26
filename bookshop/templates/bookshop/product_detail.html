@@ -25,9 +25,9 @@
                                 
                             </div>
                             <div class="ps-product__image">
-                                <div class="item"><img class="zoom" src="{{ product.image.url }}" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
-                                <div class="item"><img class="zoom" src="{{ product.image2.url }}" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
-                                <div class="item"><img class="zoom" src="{{ product.image3.url }}" alt="" data-zoom-image="images/shoe-detail/1.jpg"></div>
+                                <div class="item"><img class="zoom" src="{{ product.image.url }}" alt="" data-zoom-image="{% static 'bookshop/images/shoe-detail/1.jpg' %}"></div>
+                                <div class="item"><img class="zoom" src="{{ product.image2.url }}" alt="" data-zoom-image="{% static 'bookshop/images/shoe-detail/1.jpg' %}"></div>
+                                <div class="item"><img class="zoom" src="{{ product.image3.url }}" alt="" data-zoom-image="{% static 'bookshop/images/shoe-detail/1.jpg' %}"></div>
                                 
                             </div>
                         </div>
@@ -139,7 +139,8 @@
                                         <textarea class="form-control" rows="6" name="review"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button class="ps-btn--outline">Submit Reviews</button>
+                                        <!-- <button class="ps-btn--outline">Submit Reviews</button> -->
+                                        <input class="ps-btn" type="submit" value="Submit Reviews">
                                     </div>
                                 </div>
                             
